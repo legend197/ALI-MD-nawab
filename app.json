@@ -8,7 +8,7 @@
     "stack": "container",
   "env": {
     "SESSION_ID": {
-      "description": "Put the session-id here.",
+      "description": "STARK-ALI~akBEhQRa#SSmAAYOfblPHthfOZnBIEQBYicpQKef2ZVqGpi0hFq0",
       "required": true,
       "value": ""
     },  
@@ -35,8 +35,8 @@
         
     "ALWAYS_ONLINE": {
       "description": "Make it true if want always online.",
-      "required": false,
-      "value": "false"  
+      "required": true,
+      "value": "true"  
     },    
   
     "AUTO_VOICE": {
@@ -53,20 +53,20 @@
     
     "ADMIN_STATUS": {
       "description": "make it true if want know who promote or demote a member .",
-      "required": false,
-      "value": "false"
+      "required": true,
+      "value": "true"
     },
 
     "WELCOME": {
       "description": "make it true if want welcome message in groups.",
-      "required": false,
+      "required": true,
       "value": "true"
     },
     
    "GOODBYE": {
       "description": "make it true if want goodbye message in groups.",
-      "required": false,
-      "value": "false"
+      "required": true,
+      "value": "true"
     },
     
     "AUTO_STICKER": {
@@ -83,8 +83,8 @@
     
      "MENTION_REPLY": {
       "description": "make it true if want mention reply if someone menetion you.",
-      "required": false,
-      "value": "false"
+      "required": true,
+      "value": "true"
     }, 
 
     "AUTO_STATUS_REACT": {
@@ -102,12 +102,12 @@
     "AUTO_STATUS_MSG": {
       "description": "Type custom message on status reply",
       "required": true,
-      "value": "*SEEN YOUR STATUS JUST NOW ALI-MD 🍒*"
+      "value": "*SEEN YOUR STATUS JUST NOW THE LEGEND NAWAB 🍒*"
    
      }, 
 
     "BOT_NAME": {
-      "description": "Type here the bot name.",
+      "description": "THE LEGEND NAWAB IS HERE",
       "required": false,
       "value": "𓆩ု᪳𝐀ɭīī 𝐌Ɗှ᪳𓆪"
 
@@ -121,20 +121,20 @@
 
     "DELETE_LINK": {
       "description": "Make it true if you want bot auto delete group link.",
-      "required": false,
-      "value": "false"
+      "required": true,
+      "value": "true"
     }, 
     
     "ANTI_LINK": {
       "description": "Make it true if you want bot auto wearing group link.",
       "required": true,
-      "value": "false"
+      "value": "true"
     }, 
     
     "ANTI_BAD_WORD": {
       "description": "Make it true if you want bot auto delete bad words.",
-      "required": false,
-      "value": "false"
+      "required": true,
+      "value": "true"
     }, 
     
     "AUTO_RECORDING": {
@@ -151,15 +151,15 @@
 
     "AUTO_REACT": {
       "description": "Make it true if you want react on every message.",
-      "required": false,
-      "value": "false"
+      "required": true,
+      "value": "true"
     },
 
     
     "CUSTOM_REACT": {
       "description": "Make it true if you want custom reactions.",
-      "required": false,
-      "value": "false"
+      "required": true,
+      "value": "true"
       
     }, 
     
