@@ -1,0 +1,53 @@
+const { cmd } = require("../command");
+
+// Command for attendance check
+cmd({
+  pattern: "attendance",
+  alias: ["absensi", "presensi"],
+  desc: "Creates an attendance poll (Admin only)",
+  react: "📝",
+  category: "group",
+  filename: __filename
+}, async (conn, mek, store, { isGroup, groupMetadata, reply, sender, name }) => {
+  try {
+    if (!isGroup) return reply("❌ This command can only be used in groups!");
+
+    // Check if sender is admin
+    const participant = groupMetadata.participants.find(p => p.id === sender);
+    if (!participant?.admin) return reply("❌ Only group admins can take attendance!");
+
+    // Set the attendance options
+    const attendanceOptions = ['Present', 'Absent'];
+    
+    // Create the poll message
+    let caption = `*Attendance Check*\nRequested by: ${name}\n\nPlease mark your attendance!`;
+    
+    const pollMessage = {
+      name: caption,
+      values: attendanceOptions,
+      multiselect: false,
+      selectableCount: 1,
+    };
+
+    // Send the poll message
+    await conn.sendMessage(
+      mek.chat,
+      { poll: pollMessage },
+      { quoted: mek }
+    );
+    
+    // Send additional instructions
+    await conn.sendMessage(
+      mek.chat,
+      { 
+        text: `*Attendance Instructions:*\n1. Select "Present" if you're attending\n2. Select "Absent" if you're not\n3. Attendance will be closed in 24 hours`,
+        mentions: groupMetadata.participants.map(p => p.id)
+      },
+      { quoted: mek }
+    );
+
+  } catch (error) {
+    console.error("Error in .attendance command:", error);
+    reply(`❌ Error: ${error.message}`);
+  }
+});
